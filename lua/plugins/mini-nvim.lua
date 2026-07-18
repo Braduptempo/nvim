@@ -1,6 +1,6 @@
 return{
   "nvim-mini/mini.nvim",
-  version = 'false',
+  version = false,
   config = function ()
     local MiniCompletion = require("mini.completion")
     MiniCompletion.setup({
