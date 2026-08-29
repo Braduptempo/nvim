@@ -26,7 +26,6 @@ nvim/
         ├── neotree.lua      # The file tree explorer sidebar
         ├── nvim-notify.lua  # Beautiful pop-up notification manager
         ├── snacks-picker.lua# A modern, ultra-fast fuzzy finder (part of snacks.nvim)
-        ├── telescope.lua    # The classic, feature-rich fuzzy finder ecosystem
         ├── treesitter.lua   # Advanced syntax highlighting and abstract syntax tree parsing
         ├── undotree.lua     # Visual undo history visualizer and time travel tool
         └── vim-fugitive.lua # The gold standard Git integration for Vim
@@ -52,7 +51,6 @@ Plugins are isolated inside the `lua/plugins/` directory. Each file focuses on c
 | **`treesitter.lua`** | nvim-treesitter | Provides advanced structural syntax highlighting. It compiles native language parsers to understand functions, variables, and scopes accurately. |
 | **`lsp-config.lua`** | nvim-lspconfig | Manages your Language Server Protocols. Enables *Go to Definition*, hover documentation, auto-imports, and live error underlines. |
 | **`neotree.lua`** | neo-tree.nvim | A sleek sidebar to browse project structures, manage files, and toggle directory visibility. |
-| **`telescope.lua`** | telescope.nvim | The classic fuzzy finder framework. Lets you instantly find files (`<leader>ff`), search live text via ripgrep (`<leader>fg`), or search through help tags (`<leader>fh`). |
 | **`snacks-picker.lua`**| snacks.nvim (picker) | A modern, lightweight, high-performance alternative to traditional fuzzy finders. |
 | **`lualine.lua`** | lualine.nvim | Replaces the legacy statusbar with an animated, informative pane detailing your current Vim mode, Git branch, linting status, and file encoding. |
 | **`nvim-notify.lua`** | nvim-notify | Replaces plain-text bottom prompt messages with animated, stacked toast notifications in the corner of your screen. |
