@@ -15,19 +15,26 @@ return {
       vim.lsp.config('lua_ls', {
         settings = {
           Lua = {
-            diagnostics = {globals = {'vim'} },
+            diagnostics = { globals = { 'vim' } },
           },
         },
       })
-      
+
+      vim.lsp.config("qml-language-server", {
+        cmd = { "qml-language-server" },
+        filetypes = { "qml" },
+        root_markers = { { "qmldir", "shell.qml" }, ".git" },
+      })
+
+      vim.lsp.enable("qml-language-server")
       vim.lsp.enable({
         'lua_ls'
       })
 
-      vim.keymap.set('n' , 'K' , vim.lsp.buf.hover, {})
-      vim.keymap.set('n' , 'gd' , vim.lsp.buf.definition, opts, {desc = "Go to definition"})
-      vim.keymap.set({'n' , 'v'}, '<leader>ca' , vim.lsp.buf.code_action, {})
-      vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts, {desc = "Format Local buffer"})
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts, { desc = "Go to definition" })
+      vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
+      vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts, { desc = "Format Local buffer" })
     end
   }
 }
