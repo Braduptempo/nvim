@@ -1,11 +1,11 @@
 -- Set the leader key to the spacebar. This is the prefix for your custom keymaps.
 vim.g.mapleader = " "
 
-vim.keymap.set("x", "p", [["_dP]], { desc = "Paste over selection without losing yanked text"})
+vim.keymap.set("x", "p", [["_dP]], { desc = "Paste over selection without losing yanked text" })
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], {desc = "Delete without yanking"})
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
 
-vim.keymap.set("n", "<Esc>", ":nohl<CR>", {desc = "Clear search highlighting", silent = true})
+vim.keymap.set("n", "<Esc>", ":nohl<CR>", { desc = "Clear search highlighting", silent = true })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "moves lines down in visual selection" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual selection" })
@@ -28,4 +28,13 @@ vim.keymap.set("n", "<leader>re", "<cmd>restart<cr>", { desc = "Restart config :
 
 vim.keymap.set("n", "<leader>u", "<cmd>lua require('undotree').toggle()<cr>")
 
-vim.keymap.set('n' , '<C-n>' , ':Neotree toggle filesystem reveal right<CR>' ,{})
+-- --- Smart Neo-tree Toggle ---
+vim.keymap.set('n', '<C-n>', function()
+  -- Als je cursor al in neo-tree staat, sluit het paneel
+  if vim.bo.filetype == "neo-tree" then
+    vim.cmd("Neotree close")
+  -- Sta je in een ander bestand? Open of focus neo-tree
+  else
+    vim.cmd("Neotree focus reveal right")
+  end
+end, { desc = "Smart toggle/focus Neo-tree", silent = true })

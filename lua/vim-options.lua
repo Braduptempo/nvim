@@ -119,7 +119,7 @@ vim.opt.isfname:append("@-@")
 -- Briefly highlight yanked (copied) text to give visual feedback.
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking (copying) text",
-    callback = function ()
+    callback = function()
         vim.hl.on_yank()
     end,
 })

@@ -1,6 +1,6 @@
-return{
-  "jiaoshijie/undotree",
-  opts = {
-    -- your options
-  },
+return {
+    "jiaoshijie/undotree",
+    opts = {
+        -- your options
+    },
 }
